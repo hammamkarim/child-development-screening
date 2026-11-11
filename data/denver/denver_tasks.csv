@@ -1,0 +1,126 @@
+id,domain,name,reportable,footnote,p25_month,p50_month,p75_month,p90_month
+PS_001,personal_social,Menatap Muka,False,"Cobalah membuat anak tersenyum dengan cara tersenyum kepadanya, berbicara, atau melambaikan tangan. Jangan menyentuh anak.",,,,0.0
+PS_002,personal_social,Membalas Senyum,False,,0.5,0.8667,1.2,1.5
+PS_003,personal_social,Tersenyum Spontan,True,,,0.6667,1.4,2.1
+PS_004,personal_social,Mengamati Tagannya,True,Anak harus mengamati tangannya selama beberapa detik,0.8333,2.1,3.1,4.0
+PS_005,personal_social,Berusaha Mencapai Mainan,False,,4.1,4.7,5.3,5.9
+PS_006,personal_social,Makan Sendiri,True,,4.8,5.4,5.9,6.5
+PS_007,personal_social,Bermain Tepuk Tangan,True,,7.1,9.2,10.4,11.4
+PS_008,personal_social,Menyatakan Keinginan,True,,7.2,9.1,11.0,12.9
+PS_009,personal_social,Melambai Selamat Tinggal,True,,6.7,7.7,9.2,14.0
+PS_010,personal_social,Main Bola dengan Pemeriksa,False,,9.5,10.6,11.9,15.7
+PS_011,personal_social,Menirukan Kegiatan,True,,10.1,11.0,12.5,16.0
+PS_012,personal_social,Minum dari Cangkir,True,,8.8,12.7,15.2,17.1
+PS_013,personal_social,Membantu di Rumah,True,,12.6,14.2,15.8,17.3
+PS_014,personal_social,Menggunakan Sendok/Garpu,True,,12.8,15.2,17.5,19.9
+PS_015,personal_social,Membuka Pakaian,True,,13.3,16.8,20.4,23.9
+PS_016,personal_social,Menyuapi Boneka,False,,14.8,16.9,19.2,24.0
+PS_017,personal_social,Memakai Baju,True,,20.5,23.5,26.4,30.0
+PS_018,personal_social,Gosok Gigi dengan Bantuan,True,Orang tua boleh membantu mengarahkan tangan anak untuk menyikat gigi dan mengoleskan pasta gigi pada sikat gigi.,16.1,21.3,26.4,32.4
+PS_019,personal_social,Cuci & Mengeringkan Tangan,True,,19.2,21.8,27.6,37.2
+PS_020,personal_social,Menyebut Nama Teman,False,,26.4,30.0,33.6,37.2
+PS_021,personal_social,Memakai T-Shirt,True,,27.6,31.2,36.0,40.8
+PS_022,personal_social,Berpakaian Tanpa Bantuan,True,Anak tidak perlu bisa mengikat tali sepatu atau mengancingkan kancing di bagian belakang.,36.0,42.0,48.0,54.0
+PS_023,personal_social,Bermain Ular Tangga/Kartu,True,,32.4,37.2,51.6,58.8
+PS_024,personal_social,Gosok Gigi Tanpa Bantuan,True,,31.2,40.8,50.4,60.0
+PS_025,personal_social,Menyiapkan Sereal,True,,36.0,44.4,52.8,61.2
+FM_001,fine_motor_adaptive,Mengikuti ke Garis Tengah,False,"Gerakkan benang wol secara perlahan membentuk lengkungan dari satu sisi ke sisi lainnya, sekitar 8 inci (±20 cm) di atas wajah anak.",,,0.3967,1.3
+FM_002,fine_motor_adaptive,Mengikuti Lewat Garis Tengah,False,"Gerakkan benang wol secara perlahan membentuk lengkungan dari satu sisi ke sisi lainnya, sekitar 8 inci (±20 cm) di atas wajah anak.",0.63,0.8867,1.9,2.8
+FM_003,fine_motor_adaptive,Memegang Icik-Icik,False,Dinyatakan lulus (Pass) jika anak menggenggam kerincingan ketika kerincingan tersebut menyentuh ujung jari-jari tangannya dari sisi belakang.,2.6,3.3,3.7,3.9
+FM_004,fine_motor_adaptive,Kedua Tangan Bersentuhan,False,,2.2,2.5,2.9,4.0
+FM_005,fine_motor_adaptive,Mengikuti Objek 180°,False,"Gerakkan benang wol secara perlahan membentuk lengkungan dari satu sisi ke sisi lainnya, sekitar 8 inci (±20 cm) di atas wajah anak.",2.2,3.0,3.8,4.5
+FM_006,fine_motor_adaptive,Mengamati Manik Manik,False,,2.8,3.6,4.4,5.2
+FM_007,fine_motor_adaptive,Meraih Benda,False,,4.3,4.7,5.2,5.6
+FM_008,fine_motor_adaptive,Mencari Benang,False,"Dinyatakan lulus jika anak berusaha mencari ke mana benang wol tersebut pergi. Benang harus dijatuhkan dengan cepat hingga hilang dari pandangan dari tangan pemeriksa, tanpa menggerakkan lengan.",4.9,5.7,6.5,7.2
+FM_009,fine_motor_adaptive,Meraup Manik-Manik,False,Mengambil Manik-Manik dengan Gerakan Meraup,5.7,6.0,6.6,7.3
+FM_010,fine_motor_adaptive,Memindahkan Kubus,False,"Anak harus memindahkan balok dari satu tangan ke tangan lainnya tanpa bantuan tubuh, mulut, atau meja.",5.1,6.0,6.8,7.7
+FM_011,fine_motor_adaptive,Mengambil 2 Kubus,False,,5.7,6.2,7.1,9.1
+FM_012,fine_motor_adaptive,Memegang dengan Ibu Jari dan Jari,False,Dinyatakan lulus jika anak mengambil manik-manik menggunakan bagian mana pun dari ibu jari dan jari lainnya.,7.2,8.2,9.2,10.2
+FM_013,fine_motor_adaptive,Membenturkan 2 Kubus,True,,6.7,7.6,10.0,10.9
+FM_014,fine_motor_adaptive,Menaruh Kubus di Cangkir,False,,9.8,11.1,12.4,13.8
+FM_015,fine_motor_adaptive,Mencorat - Coret,False,,11.7,13.2,14.8,16.3
+FM_016,fine_motor_adaptive,Ambil Manik-Manik Ditunjukkan,False,,12.8,14.3,15.7,19.4
+FM_017,fine_motor_adaptive,Menara dari 2 Kubus,False,,13.5,14.8,17.1,20.6
+FM_018,fine_motor_adaptive,Menara dari 4 Kubus,False,,16.5,19.2,22.0,23.8
+FM_019,fine_motor_adaptive,Menara dari 6 Kubus,False,,19.6,22.0,24.0,31.2
+FM_020,fine_motor_adaptive,Meniru Garis Vertikal,False,"Garis dapat bervariasi, ta[i hanya boleh menyimpang maksimal 30 derajat dari garis pemeriksa.",25.2,28.8,33.6,38.4
+FM_021,fine_motor_adaptive,Menara 8 Kubus,False,,23.7,26.4,32.4,42.0
+FM_022,fine_motor_adaptive,Menggoyangkan Ibu Jari,False,"Kepalkan tangan dengan ibu jari mengarah ke atas, lalu gerakkan ibu jari saja. Dinyatakan lulus jika anak menirukan gerakan tersebut tanpa menggerakkan jari-jari lainnya selain ibu jari.",30.0,34.8,39.6,43.2
+FM_023,fine_motor_adaptive,Mencontoh ○,False,Dinyatakan lulus jika anak menggambar bentuk tertutup apa pun. Dinyatakan gagal jika anak hanya membuat gerakan melingkar terus-menerus. jangan menyebutkan nama bentuknya. Pemeriksa jangan memberikan contoh.,37.2,40.8,44.4,48.0
+FM_024,fine_motor_adaptive,Menggambar Orang 3 Bagian,False,"Saat penilaian, setiap pasangan anggota tubuh (2 lengan, 2 kaki, dan sebagainya) dihitung sebagai satu bagian.",39.6,44.4,50.4,55.2
+FM_025,fine_motor_adaptive,Mencontoh Simbol +,False,Dinyatakan lulus jika garis-garis saling berpotongan di dekat titik tengah. jangan menyebutkan nama bentuknya. Pemeriksa jangan memberikan contoh.,39.6,42.0,49.2,56.4
+FM_026,fine_motor_adaptive,Memilih Garis Yang Lebih Panjang,False,"Manakah garis yang lebih panjang? (Bukan yang lebih besar.) Balik kertas hingga terbalik, lalu ulangi. (Lulus jika benar 3 dari 3 percobaan atau 5 dari 6 percobaan.)",34.8,39.6,48.0,63.6
+FM_027,fine_motor_adaptive,"Mencontoh □, Ditunjukkan",False,"Minta anak menyalin gambar terlebih dahulu. Jika gagal, berikan contoh cara menggambarnya. Jangan menyebutkan nama bentuknya",48.0,54.0,60.0,64.8
+FM_028,fine_motor_adaptive,Menggambar Orang 6 Bagian,False,"Saat penilaian, setiap pasangan anggota tubuh (2 lengan, 2 kaki, dan sebagainya) dihitung sebagai satu bagian.",49.2,55.2,61.2,67.2
+FM_029,fine_motor_adaptive,Mencontoh □,False,Minta anak menyalin gambar. Jangan dicontohkan dan jangan menyebutkan nama bentuknya,56.4,62.4,68.4,73.2
+L_001,language,Bereaksi Terhadap Bel,False,,,,,0.0
+L_002,language,Bersuara,True,,,,,0.77
+L_003,language,Mengucapkan OOO/AAH,True,,0.63,1.1,1.6,2.7
+L_004,language,Tertawa,True,,1.3,1.9,2.5,3.1
+L_005,language,Berteriak,True,,1.2,1.7,2.8,4.3
+L_006,language,Menoleh ke Bunyi Icik-Icik,False,"Masukkan satu kubus kedalam cangkir, kemudian kocok perlahan di dekat telinga anak tetapi pastikan di luar pandangan anak, dan ulangi pada telinga yang lain",2.8,3.8,4.7,5.6
+L_007,language,Menoleh ke Arah Suara,False,,3.6,4.6,5.6,6.6
+L_008,language,Satu Silabel,True,,4.7,5.6,6.6,7.5
+L_009,language,Meniru Bunyi Kata,True,,3.0,5.2,6.0,8.8
+L_010,language,Papa/Mama Tidak Spesifik,True,,5.7,6.5,7.7,9.1
+L_011,language,Kombinasi Silabel,True,,5.8,6.5,7.4,10.1
+L_012,language,Mengoceh,True,,5.7,6.9,8.3,12.1
+L_013,language,Papa/Mama Spesifik,True,,6.9,9.3,11.0,13.3
+L_014,language,1 Kata,True,,9.7,11.5,13.3,15.0
+L_015,language,2 Kata,True,,10.7,12.6,14.6,16.5
+L_016,language,3 Kata,True,,11.5,13.6,15.8,18.0
+L_017,language,6 Kata,True,,13.7,16.3,18.8,21.4
+L_018,language,Menunjuk 2 Gambar,False,"Tunjukkan gambar dan suruh anak menyebutkan namanya (tidak diberi nilai jika hanya bunyi saja). Jika menyebut kurang dari 2 nama gambar yang benar, maka suruh anak menunjuk ke gambar sesuai dengan yang disebutkan oleh pemeriksa",17.3,19.0,20.9,23.6
+L_019,language,Kombinasi Kata,True,,17.2,19.8,22.4,25.2
+L_020,language,Menyebut 1 Gambar,False,"Tujukkan gambar dan suruh anak menyebutkan namanya (tidak diberi nilai jika hanya bunyi saja). Jika menyebut kurang dari 4 nama gambar yang benar, maka suruh anak menunjuk ke gambar sesuai dengna yang disebutkan oleh pemeriksa",18.3,19.9,23.9,27.6
+L_021,language,Bagian Badan 6,False,"Gunakan boneka, katakan pada anak untuk menunjukkan mana hidung, mata, telinga, mulut, tangan, kaki, perut, dan rambut. Lulus 6 dari 8",18.5,19.8,22.6,28.8
+L_022,language,Menunjuk 4 Gambar,False,"Tunjukkan gambar dan suruh anak menyebutkan namanya (tidak diberi nilai jika hanya bunyi saja). Jika menyebut kurang dari 4 nama gambar yang benar, maka suruh anak menunjuk ke gambar sesuai dengna yang disebutkan oleh pemeriksa",20.0,21.8,25.2,30.0
+L_023,language,Bicara Sebagian Dimengerti,False,,17.2,20.0,25.2,34.8
+L_024,language,Menyebut 4 Gambar,False,"Tunjukkan gambar dan suruh anak menyebutkan namanya (tidak diberi nilai jika hanya bunyi saja). Jika menyebut kurang dari 4 nama gambar yang benar, maka suruh anak menunjuk ke gambar sesuai dengna yang disebutkan oleh pemeriksa",23.3,27.6,31.2,34.8
+L_025,language,Mengetahui 2 Kegiatan,False,"Dengan menggunakan gambar, tanyakan kepada anak: “Mana yang bisa terbang? Mana yang mengeong? Mana yang bisa berbicara? Mana yang menggonggong? Mana yang berlari dengan cepat seperti kuda?” Lulus jika benar 2 dari 5.",23.5,28.8,33.6,38.4
+L_026,language,Mengerti 2 Kata Sifat,False,Tanyakan kepada anak: “Apa yang kamu lakukan ketika merasa kedinginan? Lelah? Lapar?” Lulus jika benar 2 dari 3,30.0,32.4,36.0,43.2
+L_027,language,Menyebut 1 Warna,False,,28.8,33.6,39.6,44.4
+L_028,language,Kegunaan 2 Benda,False,Tanyakan kepada anak: “Apa yang kamu lakukan dengan cangkir? Untuk apa kursi digunakan? Untuk apa pensil digunakan?”. Jawaban harus mencakup kata kerja yang menunjukkan tindakan.,31.2,36.0,40.8,45.6
+L_029,language,Menghitung 1 Kubus,False,"Dinyatakan lulus jika anak meletakkan balok dengan benar dan menyebutkan jumlah balok yang ada di atas kertas (1, 5).",33.6,38.4,42.0,46.8
+L_030,language,Kegunaan 3 Benda,False,Tanyakan kepada anak: “Apa yang kamu lakukan dengan cangkir? Untuk apa kursi digunakan? Untuk apa pensil digunakan? Kata-kata yang menunjukkan tindakan harus disertakan dalam jawaban.”,33.6,37.2,40.8,49.2
+L_031,language,Mengetahui 4 Kegiatan,False,"Dengan menggunakan gambar, tanyakan kepada anak: “Mana yang bisa terbang? Mana yang mengeong? Mana yang bisa berbicara? Mana yang menggonggong? Mana yang berlari dengan cepat seperti kuda?” Lulus jika benar 4 dari 5.",30.0,32.4,38.4,50.4
+L_032,language,Bicara Semua Dimengerti,False,,23.4,27.6,39.6,50.4
+L_033,language,Mengerti 4 Kata Depan,False,"Minta anak: “Letakkan balok di atas meja, di bawah meja, di depan saya, dan di belakang saya.” Lulus jika benar 4 dari 4. (Jangan membantu anak dengan menunjuk atau menggerakkan kepala maupun mata.)",32.4,36.0,45.6,56.4
+L_034,language,Menyebut 4 Warna,False,,36.0,43.2,50.4,57.6
+L_035,language,Mengartikan 5 Kata,False,"Tanyakan kepada anak: “Apa itu bola? Danau? Meja? Rumah? Pisang? Tirai? Pagar? Langit-langit?” Lulus jika anak menjelaskan berdasarkan fungsi, bentuk, bahan pembuatnya, atau kategori umum (misalnya, pisang adalah buah, bukan hanya berwarna kuning). Lulus jika benar 5 dari 8.",39.6,45.6,55.2,63.6
+L_036,language,Mengetahui 3 Kata Sifat,False,Tanyakan kepada anak: “Apa yang kamu lakukan ketika merasa kedinginan? Lelah? Lapar?” Lulus jika benar 3 dari 3,34.8,38.4,45.6,63.6
+L_037,language,Menghitung 5 Kubus,False,"Dinyatakan lulus jika anak meletakkan balok dengan benar dan menyebutkan jumlah balok yang ada di atas kertas (1, 5).",49.2,54.0,60.0,64.8
+L_038,language,Berlawanan 2,False,"Tanyakan kepada anak: “Jika kuda itu besar, tikus itu ___? Jika api itu panas, es itu ___? Jika matahari bersinar pada siang hari, bulan bersinar pada ___?” Lulus jika benar 2 dari 3.",43.2,51.6,60.0,68.4
+L_039,language,Mengartikan 7 Kata,False,"Tanyakan kepada anak: “Apa itu bola? Danau? Meja? Rumah? Pisang? Tirai? Pagar? Langit-langit?” Lulus jika anak menjelaskan berdasarkan fungsi, bentuk, bahan pembuatnya, atau kategori umum (misalnya, pisang adalah buah, bukan hanya berwarna kuning). Lulus jika benar 7 dari 8.",46.8,56.4,64.8,73.2
+GM_001,gross_motor,Gerakan Seimbang,False,,,,,0.0
+GM_002,gross_motor,Mengangkat Kepala,True,,,,,0.0
+GM_003,gross_motor,Kepala Terangkat 45°,False,,,0.8633,1.8,2.7
+GM_004,gross_motor,Kepala Terangkat 90°,False,,1.5,2.2,2.9,3.6
+GM_005,gross_motor,Duduk Kepala Tegak,False,,1.6,2.3,3.0,3.7
+GM_006,gross_motor,Menumpu Berat pada Kaki,False,,1.7,2.6,3.6,4.4
+GM_007,gross_motor,Dada Terangkat Menumpu pada Lengan,False,,2.6,3.3,4.0,4.6
+GM_008,gross_motor,Tengkurap Sendiri,True,,2.1,3.2,4.3,5.4
+GM_009,gross_motor,Bangkit Kepala Tegak,False,,2.8,3.4,4.1,6.2
+GM_010,gross_motor,Duduk Tanpa Pengangan,False,,5.4,5.9,6.3,6.8
+GM_011,gross_motor,Berdiri dengan Pengangan,False,,6.5,7.2,7.8,8.5
+GM_012,gross_motor,Bangkit untuk Berdiri,False,,7.8,8.4,9.1,9.7
+GM_013,gross_motor,Bangkit Terus Duduk,True,,7.6,8.4,9.1,9.9
+GM_014,gross_motor,Berdiri 2 Detik,False,,9.4,10.2,10.9,11.6
+GM_015,gross_motor,Berdiri Sendiri,False,,10.4,11.5,12.5,13.7
+GM_016,gross_motor,Membungkuk dan Kembali Berdiri,False,,11.0,12.2,13.4,14.6
+GM_017,gross_motor,Berjalan dengan Baik,False,,11.1,12.3,13.6,14.9
+GM_018,gross_motor,Berjalan Mundur,True,,12.3,13.8,15.2,16.6
+GM_019,gross_motor,Lari,False,,13.8,15.8,17.8,19.9
+GM_020,gross_motor,Berjalan Naik Tangga,True,"Anak hanya boleh menggunakan dinding atau pegangan sebagai penopang, bukan orang lain. Anak tidak boleh merangkak.",14.1,16.6,19.1,21.6
+GM_021,gross_motor,Menendang Bola ke Depan,False,,15.9,18.3,20.8,23.2
+GM_022,gross_motor,Melompat,False,,21.4,23.8,26.4,28.8
+GM_023,gross_motor,"Melempar Bola, Lengan di Atas",False,Anak harus melempar bola dari atas bahu sejauh 3 kaki hingga bola berada dalam jangkauan tangan pemeriksa.,17.1,20.3,23.8,34.8
+GM_024,gross_motor,Loncat Jauh,False,"Anak harus melakukan lompat jauh dari posisi berdiri melewati lebar lembar tes (8½ inci atau sekitar 21,6 cm).",28.8,32.4,34.8,38.4
+GM_025,gross_motor,Berdiri dengan 1 Kaki Selama 1 Detik,False,,27.6,30.0,33.6,40.8
+GM_026,gross_motor,Berdiri dengan 1 Kaki Selama 2 Detik,False,,31.2,37.2,42.0,48.0
+GM_027,gross_motor,Melompat dengan 1 Kaki,False,,38.4,42.0,46.8,50.4
+GM_028,gross_motor,Berdiri dengan 1 Kaki Selama 3 Detik,False,,32.4,39.6,46.8,56.4
+GM_029,gross_motor,Berdiri dengan 1 Kaki Selama 4 Detik,False,,42.0,48.0,54.0,61.2
+GM_030,gross_motor,Berdiri dengan 1 Kaki Selama 5 Detik,False,,44.4,51.6,58.8,64.8
+GM_031,gross_motor,Berjalan Tumit ke Jari Kaki,False,"Minta anak berjalan ke depan dengan posisi tumit berjarak maksimal 1 inci (±2,5 cm) dari ujung kaki. Pemeriksa boleh memberikan contoh. Anak harus berjalan sebanyak 4 langkah berturut-turut.",48.0,55.2,61.2,68.4
+GM_032,gross_motor,Berdiri dengan 1 Kaki Selama 6 Detik,False,,50.4,57.6,64.8,70.8

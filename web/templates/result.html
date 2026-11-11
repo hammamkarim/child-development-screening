@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Pemeriksaan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+</head>
+<body class="result-page">
+    <header class="result-header">
+        <a class="btn-primary result-back-button" href="{{ url_for('index') }}">← Kembali</a>
+        <div class="result-header-title">
+            <h1>Hasil Pemeriksaan</h1>
+            <p>Sistem Klasifikasi Status Perkembangan Anak</p>
+        </div>
+    </header>
+
+    <main class="result-layout">
+        <aside class="result-sidebar">
+            <section class="result-card child-result-card">
+                <div class="result-section-title">
+                    <span class="result-icon">👥</span>
+                    <h2>Data Anak</h2>
+                </div>
+                <dl class="child-data-list">
+                    <div><dt>Nama Pemeriksa</dt><dd id="resultExaminer">—</dd></div>
+                    <div><dt>Nama Anak</dt><dd id="resultChildName">—</dd></div>
+                    <div><dt>Tanggal Skrining</dt><dd id="resultScreeningDate">—</dd></div>
+                    <div><dt>Tanggal Lahir</dt><dd id="resultBirthDate">—</dd></div>
+                    <div><dt>Usia Anak</dt><dd id="resultAge">—</dd></div>
+                    <div><dt>Jenis Kelamin</dt><dd><span id="resultGender" class="result-pill">—</span></dd></div>
+                    <div><dt>Berat Badan</dt><dd id="resultWeight">—</dd></div>
+                    <div><dt>Tinggi Badan</dt><dd id="resultHeight">—</dd></div>
+                    <div><dt>Prematur</dt><dd><span id="resultPremature" class="result-pill">—</span></dd></div>
+                </dl>
+            </section>
+
+            <section class="result-card summary-result-card">
+                <div class="result-section-title">
+                    <span class="result-icon">▥</span>
+                    <h2>Ringkasan Tugas Perkembangan</h2>
+                </div>
+                <div class="result-total-tasks">
+                    Total tugas perkembangan yang diuji: <strong id="resultTotalTasks">0</strong>
+                </div>
+                <div class="domain-summary-list" id="resultDomainSummary">
+                    <p class="result-loading">Memuat ringkasan pemeriksaan...</p>
+                </div>
+            </section>
+        </aside>
+
+        <section class="result-main">
+            <!-- Preview diagram hasil pemeriksaan Denver II -->
+            <section class="result-card result-placeholder-card result-diagram-card">
+                <div class="result-section-title result-diagram-heading">
+                    <div class="result-diagram-title-wrap">
+                        <span class="result-icon">☑</span>
+                        <div>
+                            <h2>Preview Diagram Denver II</h2>
+                            <p class="result-diagram-subtitle">Ringkasan Diagram Denver II Hasil Pemeriksaan</p>
+                        </div>
+                    </div>
+                    <button type="button" class="result-detail-button" id="viewFullDiagramButton" data-detail-url="{{ url_for('detail') }}">
+                        Lihat Diagram Lengkap <span aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div class="result-diagram-legend" aria-label="Legenda diagram">
+                    <span><i class="legend-age-line"></i> Garis umur</span>
+                    <span><b class="legend-answer legend-answer-pass">P</b> Berhasil</span>
+                    <span><b class="legend-answer legend-answer-fail">F</b> Gagal</span>
+                    <span><i class="legend-task-initial"></i> Tugas awal</span>
+                    <span><i class="legend-task-additional"></i> Tugas tambahan</span>
+                    <span><i class="legend-percentile"></i> Rentang P75–P90</span>
+                </div>
+                <div class="result-diagram-summary" id="resultDiagramSummary" role="status">Memuat diagram hasil pemeriksaan...</div>
+                <div class="result-diagram-viewport" id="resultDiagramViewport" tabindex="0" aria-label="Preview diagram Denver II; dapat digulir ke samping dan ke bawah">
+                    <svg id="resultDenverPreview" role="img" aria-label="Diagram tugas Denver II yang telah diperiksa" xmlns="http://www.w3.org/2000/svg"></svg>
+                </div>
+                <p class="result-diagram-help">Setiap baris menunjukkan tugas yang telah diperiksa. Penanda P/F menunjukkan hasilnya, sedangkan garis biru menunjukkan usia anak. Geser diagram ke samping atau gulir ke bawah untuk melihat seluruh tugas.</p>
+                <div class="result-diagram-footer">
+                    <span id="resultDiagramTaskCount">0 tugas ditampilkan</span>
+                    <span>Rincian tugas juga tersedia saat kursor diarahkan ke batang tugas.</span>
+                </div>
+                <div class="result-diagram-notice" id="resultDiagramNotice" hidden></div>
+            </section>
+
+            <!-- Interpretasi hasil per domain Denver II -->
+            <section class="result-card domain-interpretation-card">
+                <div class="result-section-title">
+                    <span class="result-icon">◎</span>
+                    <h2>Interpretasi Hasil Domain</h2>
+                </div>
+                <p class="interpretation-intro">
+                    Interpretasi dihitung dari hasil P/F setiap tugas dan posisi garis umur terhadap persentil tugas.
+                </p>
+                <div class="domain-interpretation-grid" id="resultDomainInterpretation">
+                    <p class="result-loading">Memuat interpretasi hasil domain...</p>
+                </div>
+                <p class="interpretation-note">
+                    
+                </p>
+            </section>
+
+            <section class="result-card final-conclusion-card" id="finalConclusionCard">
+                <div class="result-section-title">
+                    <span class="result-icon">▤</span>
+                    <h2>Kesimpulan Akhir</h2>
+                </div>
+
+                <div class="ai-start-panel" id="aiStartPanel">
+                    <div class="ai-preview-decoration" aria-hidden="true">
+                        <span class="ai-preview-chip">Status Perkembangan</span>
+                        <span class="ai-preview-bar"></span>
+                        <span class="ai-preview-bar short"></span>
+                    </div>
+                    <div class="ai-start-content">
+                        <p class="ai-eyebrow">✦ Analisa Menggunakan AI</p>
+                        <h3>Kesimpulan Hasil Pemeriksaan Perkembangan</h3>
+                        <p class="ai-start-description">Tekan tombol di bawah untuk menganalisis hasil pekembangan berdasarkan usia, berat badan, tinggi badan, dan hasil pemeriksaan empat domain menggunakan AI.</p>
+                        <p class="ai-prerequisite-note" id="aiPrerequisiteNote">Hasil akhir akan ditampilkan setelah analisis selesai.</p>
+                        <button class="ai-primary-button" id="aiAnalyzeButton" type="button">Mulai Analisa</button>
+                    </div>
+                </div>
+
+                <div class="ai-loading-panel" id="aiLoadingPanel" role="status" aria-live="polite" hidden>
+                    <span class="ai-spinner" aria-hidden="true"></span>
+                    <h3>AI sedang menganalisis...</h3>
+                    <p>Memproses data anak dan hasil keempat domain Denver II. Mohon tunggu.</p>
+                </div>
+
+                <div class="ai-error-panel" id="aiErrorPanel" role="alert" hidden>
+                    <p class="ai-error-title">Analisis belum berhasil</p>
+                    <p id="aiErrorMessage">Terjadi kesalahan saat menjalankan analisis.</p>
+                    <button class="ai-secondary-button" id="aiRetryButton" type="button">Coba Lagi</button>
+                </div>
+
+                <div class="ai-result-panel" id="aiResultPanel" hidden>
+                    <div class="ai-result-grid">
+                        <section class="final-status-card" id="finalStatusCard">
+                            <p class="final-card-heading">Status Perkembangan</p>
+                            <div class="final-status-value" id="aiFinalStatus">—</div>
+                            <p class="final-status-description" id="aiFinalDescription">—</p>
+
+                            <div class="final-probability">
+                                <p class="probability-heading">Probabilitas Model</p>
+
+                                <div class="probability-row">
+                                    <span>Normal</span>
+                                    <strong id="normalProbability">—</strong>
+                                </div>
+
+                                <div class="probability-row">
+                                    <span>Suspect</span>
+                                    <strong id="suspectProbability">—</strong>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="final-recommendation-card">
+                            <h3><span aria-hidden="true">ⓘ</span> Rekomendasi</h3>
+                            <p id="aiRecommendation">—</p>
+                        </section>
+                    </div>
+                    <div class="ai-result-footer">
+                        <p>Hasil dari sistem berbasis Denver II merupakan skrining perkembangan, bukan diagnosis.</p>
+                        <button class="ai-save-button" id="saveReportButton" type="button" title="Fitur simpan laporan akan diaktifkan pada tahap berikutnya">Simpan Laporan</button>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/result.js') }}"></script>
+</body>
+</html>

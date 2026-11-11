@@ -1,0 +1,324 @@
+{
+  "child": {
+    "examiner_name": "aa",
+    "screening_date": "2026-11-10",
+    "child_name": "bbb",
+    "gender": "Perempuan",
+    "weight": "15",
+    "height": "80",
+    "birth_date": "2024-11-10",
+    "premature": "no",
+    "premature_weeks": ""
+  },
+  "age": {
+    "days": 0,
+    "months": 0,
+    "years": 2
+  },
+  "domains": {
+    "personal_social": {
+      "name": "Personal Sosial",
+      "pass": 3,
+      "fail": 8,
+      "answered": 11,
+      "total_displayed": 11,
+      "completed": true,
+      "exhausted": false,
+      "tasks": [
+        {
+          "id": "PS_013",
+          "name": "Membantu di Rumah",
+          "reportable": true,
+          "answer": "F"
+        },
+        {
+          "id": "PS_014",
+          "name": "Menggunakan Sendok/Garpu",
+          "reportable": true,
+          "answer": "F"
+        },
+        {
+          "id": "PS_015",
+          "name": "Membuka Pakaian",
+          "reportable": true,
+          "answer": "F"
+        },
+        {
+          "id": "PS_016",
+          "name": "Menyuapi Boneka",
+          "reportable": false,
+          "answer": "F"
+        },
+        {
+          "id": "PS_017",
+          "name": "Memakai Baju",
+          "reportable": true,
+          "answer": "F"
+        },
+        {
+          "id": "PS_018",
+          "name": "Gosok Gigi dengan Bantuan",
+          "reportable": true,
+          "answer": "F"
+        },
+        {
+          "id": "PS_019",
+          "name": "Cuci & Mengeringkan Tangan",
+          "reportable": true,
+          "answer": "F"
+        },
+        {
+          "id": "PS_012",
+          "name": "Minum dari Cangkir",
+          "reportable": true,
+          "answer": "F"
+        },
+        {
+          "id": "PS_011",
+          "name": "Menirukan Kegiatan",
+          "reportable": true,
+          "answer": "P"
+        },
+        {
+          "id": "PS_010",
+          "name": "Main Bola dengan Pemeriksa",
+          "reportable": false,
+          "answer": "P"
+        },
+        {
+          "id": "PS_009",
+          "name": "Melambai Selamat Tinggal",
+          "reportable": true,
+          "answer": "P"
+        }
+      ]
+    },
+    "fine_motor_adaptive": {
+      "name": "Adaptif-Motorik Halus",
+      "pass": 6,
+      "fail": 3,
+      "answered": 9,
+      "total_displayed": 9,
+      "completed": true,
+      "exhausted": false,
+      "tasks": [
+        {
+          "id": "FM_016",
+          "name": "Ambil Manik-Manik Ditunjukkan",
+          "reportable": false,
+          "answer": "P"
+        },
+        {
+          "id": "FM_017",
+          "name": "Menara dari 2 Kubus",
+          "reportable": false,
+          "answer": "P"
+        },
+        {
+          "id": "FM_018",
+          "name": "Menara dari 4 Kubus",
+          "reportable": false,
+          "answer": "P"
+        },
+        {
+          "id": "FM_019",
+          "name": "Menara dari 6 Kubus",
+          "reportable": false,
+          "answer": "P"
+        },
+        {
+          "id": "FM_021",
+          "name": "Menara 8 Kubus",
+          "reportable": false,
+          "answer": "P"
+        },
+        {
+          "id": "FM_020",
+          "name": "Meniru Garis Vertikal",
+          "reportable": false,
+          "answer": "P"
+        },
+        {
+          "id": "FM_022",
+          "name": "Menggoyangkan Ibu Jari",
+          "reportable": false,
+          "answer": "F"
+        },
+        {
+          "id": "FM_026",
+          "name": "Memilih Garis Yang Lebih Panjang",
+          "reportable": false,
+          "answer": "F"
+        },
+        {
+          "id": "FM_023",
+          "name": "Mencontoh ○",
+          "reportable": false,
+          "answer": "F"
+        }
+      ]
+    },
+    "language": {
+      "name": "Bahasa",
+      "pass": 11,
+      "fail": 3,
+      "answered": 14,
+      "total_displayed": 14,
+      "completed": true,
+      "exhausted": false,
+      "tasks": [
+        {
+          "id": "L_016",
+          "name": "3 Kata",
+          "reportable": true,
+          "answer": "P"
+        },
+        {
+          "id": "L_017",
+          "name": "6 Kata",
+          "reportable": true,
+          "answer": "P"
+        },
+        {
+          "id": "L_018",
+          "name": "Menunjuk 2 Gambar",
+          "reportable": false,
+          "answer": "P"
+        },
+        {
+          "id": "L_019",
+          "name": "Kombinasi Kata",
+          "reportable": true,
+          "answer": "P"
+        },
+        {
+          "id": "L_020",
+          "name": "Menyebut 1 Gambar",
+          "reportable": false,
+          "answer": "P"
+        },
+        {
+          "id": "L_021",
+          "name": "Bagian Badan 6",
+          "reportable": false,
+          "answer": "P"
+        },
+        {
+          "id": "L_022",
+          "name": "Menunjuk 4 Gambar",
+          "reportable": false,
+          "answer": "P"
+        },
+        {
+          "id": "L_023",
+          "name": "Bicara Sebagian Dimengerti",
+          "reportable": false,
+          "answer": "P"
+        },
+        {
+          "id": "L_024",
+          "name": "Menyebut 4 Gambar",
+          "reportable": false,
+          "answer": "P"
+        },
+        {
+          "id": "L_025",
+          "name": "Mengetahui 2 Kegiatan",
+          "reportable": false,
+          "answer": "P"
+        },
+        {
+          "id": "L_032",
+          "name": "Bicara Semua Dimengerti",
+          "reportable": false,
+          "answer": "P"
+        },
+        {
+          "id": "L_027",
+          "name": "Menyebut 1 Warna",
+          "reportable": false,
+          "answer": "F"
+        },
+        {
+          "id": "L_026",
+          "name": "Mengerti 2 Kata Sifat",
+          "reportable": false,
+          "answer": "F"
+        },
+        {
+          "id": "L_031",
+          "name": "Mengetahui 4 Kegiatan",
+          "reportable": false,
+          "answer": "F"
+        }
+      ]
+    },
+    "gross_motor": {
+      "name": "Motorik Kasar",
+      "pass": 6,
+      "fail": 3,
+      "answered": 9,
+      "total_displayed": 9,
+      "completed": true,
+      "exhausted": false,
+      "tasks": [
+        {
+          "id": "GM_019",
+          "name": "Lari",
+          "reportable": false,
+          "answer": "P"
+        },
+        {
+          "id": "GM_020",
+          "name": "Berjalan Naik Tangga",
+          "reportable": true,
+          "answer": "P"
+        },
+        {
+          "id": "GM_021",
+          "name": "Menendang Bola ke Depan",
+          "reportable": false,
+          "answer": "P"
+        },
+        {
+          "id": "GM_022",
+          "name": "Melompat",
+          "reportable": false,
+          "answer": "P"
+        },
+        {
+          "id": "GM_023",
+          "name": "Melempar Bola, Lengan di Atas",
+          "reportable": false,
+          "answer": "P"
+        },
+        {
+          "id": "GM_025",
+          "name": "Berdiri dengan 1 Kaki Selama 1 Detik",
+          "reportable": false,
+          "answer": "P"
+        },
+        {
+          "id": "GM_024",
+          "name": "Loncat Jauh",
+          "reportable": false,
+          "answer": "F"
+        },
+        {
+          "id": "GM_026",
+          "name": "Berdiri dengan 1 Kaki Selama 2 Detik",
+          "reportable": false,
+          "answer": "F"
+        },
+        {
+          "id": "GM_028",
+          "name": "Berdiri dengan 1 Kaki Selama 3 Detik",
+          "reportable": false,
+          "answer": "F"
+        }
+      ]
+    }
+  },
+  "total_tasks": 43,
+  "saved_at": "2026-11-10T11:48:28.160Z"
+}

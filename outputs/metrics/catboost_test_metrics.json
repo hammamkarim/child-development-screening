@@ -1,0 +1,9 @@
+{
+    "test_samples": 16000,
+    "accuracy": 0.97375,
+    "precision": 0.9755610205963726,
+    "recall": 0.9920287589871835,
+    "f1_score": 0.9837259764414135,
+    "positive_class": "suspect",
+    "evaluation_set": "20% test set"
+}

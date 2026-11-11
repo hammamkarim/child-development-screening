@@ -1,0 +1,9 @@
+{
+    "learning_rate": 0.05,
+    "depth": 4,
+    "iterations": 200,
+    "random_seed": 42,
+    "boosting_type": "Ordered",
+    "grow_policy": "SymmetricTree",
+    "loss_function": "Logloss"
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<style>
+  @page { size: A3 portrait; margin: 4mm 5mm; }
+  * { box-sizing: border-box; }
+  body { margin: 0; color: #202124; font-family: Arial, Helvetica, sans-serif; }
+  .diagram-page { page-break-after: always; }
+  .page-header { border-bottom: 0.7pt solid #6f7782; padding-bottom: 1.2mm; margin-bottom: 1mm; }
+  h1 { margin: 0; font-size: 17pt; line-height: 1; color: #333840; }
+  .metadata { display: grid; grid-template-columns: 1fr 1fr; column-gap: 8mm; row-gap: 0.7mm; margin-top: 1.5mm; }
+  .field { display: grid; grid-template-columns: 24mm 1fr; gap: 1mm; font-size: 7.5pt; min-height: 3mm; }
+  .field .label { font-weight: 700; text-transform: uppercase; font-size: 6.5pt; }
+  .field .value { border-bottom: 0.4pt dotted #a5aab1; min-height: 3mm; }
+  .chart { width: 100%; line-height: 0; page-break-inside: avoid; }
+  .chart svg { display: block; width: 100%; height: auto; max-width: 100%; margin: 0 auto; }
+  .report-page { padding: 1mm 2mm; }
+  .report-title { margin: 0 0 2mm; font-size: 19pt; color: #202b3c; }
+  .report-subtitle { margin: 0 0 5mm; color: #64748b; font-size: 9pt; }
+  .section { border: .7pt solid #dfe5ef; border-radius: 3mm; padding: 4mm; margin-bottom: 4mm; page-break-inside: avoid; }
+  .section h2 { margin: 0 0 3mm; font-size: 12pt; color: #202b3c; }
+  .child-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2mm 6mm; }
+  .child-field { display: grid; grid-template-columns: 42mm 1fr; gap: 2mm; font-size: 9pt; padding: 1.3mm 0; border-bottom: .3pt solid #edf0f5; }
+  .child-field .label { color: #64748b; }
+  .child-field .value { font-weight: 700; overflow-wrap: anywhere; }
+  .total-strip { display: flex; justify-content: space-between; gap: 3mm; padding: 3mm; margin-bottom: 3mm; border: .7pt solid #b8ccff; border-radius: 2mm; background: #f1f6ff; font-size: 10pt; font-weight: 700; }
+  .domain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5mm; }
+  .domain-card { border: .6pt solid #dfe5ef; border-radius: 2mm; padding: 3mm; page-break-inside: avoid; }
+  .domain-name { font-size: 10pt; font-weight: 700; margin-bottom: 2mm; }
+  .domain-counts { display: flex; gap: 2mm; font-size: 8.5pt; }
+  .pass-count { color: #187343; background: #e8f7ed; border: .5pt solid #b9e8c8; border-radius: 2mm; padding: 1mm 2mm; }
+  .fail-count { color: #b91c1c; background: #fff0f0; border: .5pt solid #fecaca; border-radius: 2mm; padding: 1mm 2mm; }
+  .domain-status { margin-top: 2mm; font-size: 8.5pt; color: #334155; }
+  .final-box { display: grid; grid-template-columns: 58mm 1fr; gap: 4mm; }
+  .final-status { border: .8pt solid #b9e8c8; border-radius: 2mm; background: #f0fbf4; padding: 4mm; }
+  .final-status.suspect { border-color: #f5c6c6; background: #fff4f4; }
+  .final-status .label { font-size: 9pt; font-weight: 700; color: #334155; }
+  .final-status .value { margin: 3mm 0; font-size: 24pt; font-weight: 900; color: #15803d; overflow-wrap: anywhere; }
+  .final-status.suspect .value { color: #b91c1c; }
+  .final-status .description { font-size: 8.5pt; line-height: 1.5; }
+  .recommendation { border: .8pt solid #b8ccff; border-radius: 2mm; background: #f3f7ff; padding: 4mm; }
+  .recommendation h3 { margin: 0 0 2mm; font-size: 11pt; }
+  .recommendation p { margin: 0; font-size: 9pt; line-height: 1.65; white-space: pre-wrap; }
+  .disclaimer { margin-top: 3mm; color: #64748b; font-size: 8pt; }
+</style>
+</head>
+<body>
+  <section class="diagram-page">
+    <header class="page-header">
+      <h1>Denver II</h1>
+      <div class="metadata">
+        <div class="field"><span class="label">Pemeriksa:</span><span class="value">{{ examiner_name }}</span></div>
+        <div class="field"><span class="label">Nama:</span><span class="value">{{ child_name }}</span></div>
+        <div class="field"><span class="label">Tanggal:</span><span class="value">{{ screening_date }}</span></div>
+        <div class="field"><span class="label">Tanggal lahir:</span><span class="value">{{ birth_date }}</span></div>
+      </div>
+    </header>
+    <main class="chart">{{ svg|safe }}</main>
+  </section>
+
+  <section class="report-page">
+    <h1 class="report-title">Laporan Hasil Skrining Denver II</h1>
+    <p class="report-subtitle">Ringkasan data anak, hasil tugas perkembangan, interpretasi domain, dan kesimpulan akhir.</p>
+
+    <section class="section">
+      <h2>Data Anak</h2>
+      <div class="child-grid">
+        <div class="child-field"><span class="label">Nama Pemeriksa</span><span class="value">{{ examiner_name }}</span></div>
+        <div class="child-field"><span class="label">Nama Anak</span><span class="value">{{ child_name }}</span></div>
+        <div class="child-field"><span class="label">Tanggal Skrining</span><span class="value">{{ screening_date }}</span></div>
+        <div class="child-field"><span class="label">Tanggal Lahir</span><span class="value">{{ birth_date }}</span></div>
+        <div class="child-field"><span class="label">Usia Anak</span><span class="value">{{ age_label }}</span></div>
+        <div class="child-field"><span class="label">Jenis Kelamin</span><span class="value">{{ gender }}</span></div>
+        <div class="child-field"><span class="label">Berat Badan</span><span class="value">{{ weight }}</span></div>
+        <div class="child-field"><span class="label">Tinggi Badan</span><span class="value">{{ height }}</span></div>
+        <div class="child-field"><span class="label">Prematur</span><span class="value">{{ premature_label }}</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Ringkasan Tugas Perkembangan</h2>
+      <div class="total-strip"><span>Total tugas perkembangan yang diuji</span><span>{{ total_tasks }}</span></div>
+      <div class="domain-grid">
+        {% for item in domain_rows %}
+        <div class="domain-card">
+          <div class="domain-name">{{ item.name }}</div>
+          <div class="domain-counts"><span class="pass-count">Berhasil (P): {{ item["pass"] }}</span><span class="fail-count">Gagal (F): {{ item["fail"] }}</span></div>
+        </div>
+        {% endfor %}
+      </div>
+      <p class="disclaimer">Total: {{ total_pass }} tugas berhasil dan {{ total_fail }} tugas gagal.</p>
+    </section>
+
+    <section class="section">
+      <h2>Interpretasi Hasil Domain</h2>
+      <div class="domain-grid">
+        {% for item in domain_rows %}
+        <div class="domain-card">
+          <div class="domain-name">{{ item.name }}</div>
+          <div class="domain-status">Status: <strong>{{ item.status }}</strong></div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Kesimpulan Akhir</h2>
+      <div class="final-box">
+        <div class="final-status {% if final_status_key == 'suspect' %}suspect{% endif %}">
+          <div class="label">Status Perkembangan</div>
+          <div class="value">{{ final_status }}</div>
+          <div class="description">{{ final_description }}</div>
+        </div>
+        <div class="recommendation">
+          <h3>Rekomendasi</h3>
+          <p>{{ recommendation }}</p>
+        </div>
+      </div>
+      <p class="disclaimer">Hasil Denver II merupakan skrining perkembangan, bukan diagnosis.</p>
+    </section>
+  </section>
+</body>
+</html>

@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Skrining Perkembangan Anak</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+
+<body>
+
+<header class="page-header">
+    <div>
+        <h1>Skrining Perkembangan Anak (Denver II)</h1>
+        <p>Sistem Klasifikasi Status Perkembangan Anak</p>
+    </div>
+</header>
+
+<main class="main-container">
+
+    <!-- =========================
+         DATA ANAK
+    ========================== -->
+
+    <section class="card child-card">
+
+        <div class="section-title">
+            <span class="icon" style="position: relative; top: -5px;">👥</span>
+            <h2>Input Data Anak</h2>
+        </div>
+
+        <form id="screeningForm">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label for="examiner_name">
+                        Nama Pemeriksa
+                    </label>
+
+                    <input
+                        type="text"
+                        id="examiner_name"
+                        name="examiner_name"
+                        placeholder="Nama pemeriksa"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="screening_date">
+                        Tanggal Skrining
+                    </label>
+
+                    <input
+                        type="date"
+                        id="screening_date"
+                        name="screening_date"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group full">
+                    <label for="child_name">
+                        Nama Anak
+                    </label>
+
+                    <input
+                        type="text"
+                        id="child_name"
+                        name="child_name"
+                        placeholder="Nama anak"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label>
+                        Jenis Kelamin
+                    </label>
+
+                    <div class="gender-buttons">
+
+                        <label class="gender-option">
+                            <input
+                                type="radio"
+                                name="gender"
+                                value="Laki-laki"
+                                required
+                            >
+                            <span>Laki-laki</span>
+                        </label>
+
+                        <label class="gender-option">
+                            <input
+                                type="radio"
+                                name="gender"
+                                value="Perempuan"
+                            >
+                            <span>Perempuan</span>
+                        </label>
+
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="weight">
+                        Berat Badan (kg)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="weight"
+                        name="weight"
+                        min="3"
+                        max="20"
+                        step="0.1"
+                        placeholder="Contoh: 7"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="height">
+                        Tinggi Badan (cm)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="height"
+                        name="height"
+                        min="50"
+                        max="120"
+                        step="0.1"
+                        placeholder="Contoh: 64"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label for="birth_date">
+                        Tanggal Lahir
+                    </label>
+
+                    <input
+                        type="date"
+                        id="birth_date"
+                        name="birth_date"
+                        required
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label>
+                        Usia Anak
+                    </label>
+
+                    <div
+                        id="ageDisplay"
+                        class="age-display"
+                    >
+                        Akan dihitung otomatis
+                    </div>
+                </div>
+
+
+                <div class="form-group full">
+                    <label>
+                        Apakah anak prematur?
+                    </label>
+
+                    <div class="premature-options">
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="premature"
+                                value="no"
+                                checked
+                            >
+                            Tidak
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="premature"
+                                value="yes"
+                            >
+                            Ya
+                        </label>
+
+                    </div>
+                </div>
+
+
+                <div
+                    class="form-group full"
+                    id="prematureWeeksGroup"
+                    style="display:none;"
+                >
+
+                    <label for="premature_weeks">
+                        Jika ya, prematur berapa minggu?
+                    </label>
+
+                    <input
+                        type="number"
+                        id="premature_weeks"
+                        name="premature_weeks"
+                        min="3"
+                        max="40"
+                        placeholder="Contoh: 6"
+                    >
+
+                    <small>
+                        Masukkan usia prematur dalam minggu.
+                    </small>
+
+                </div>
+
+            </div>
+
+            <div
+                class="info-box"
+                id="prematureInfo"
+                style="display: none;"
+            >
+                <strong>ⓘ Informasi</strong>
+                <span>
+                    Usia anak akan disesuaikan jika anak lahir prematur
+                </span>
+            </div>
+
+            <div class="child-actions">
+
+                <button
+                    type="button"
+                    class="btn-secondary"
+                    id="resetChildButton"
+                >
+                    ↶ Reset Form
+                </button>
+
+                <button
+                    type="button"
+                    class="btn-secondary"
+                    id="editChildButton"
+                    hidden
+                >
+                    Edit Data Anak
+                </button>
+
+                <button
+                    type="button"
+                    class="btn-primary"
+                    id="saveChildButton"
+                >
+                    Simpan Data Anak
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+    
+    <!-- POPUP KONFIRMASI RESET FORM -->
+    <div class="task-detail-modal" id="resetConfirmModal" hidden>
+        <div class="task-detail-backdrop" data-cancel-reset></div>
+
+        <div
+            class="task-detail-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="resetConfirmTitle"
+        >
+            <div class="task-detail-header">
+                <h3 id="resetConfirmTitle">Reset Form</h3>
+                <button
+                    type="button"
+                    class="task-detail-close"
+                    data-cancel-reset
+                    aria-label="Batal"
+                >&times;</button>
+            </div>
+
+            <div class="task-detail-body">
+                <p>Apakah Anda yakin ingin mengosongkan data anak dan progres pemeriksaan pada halaman ini? Hasil yang sudah tersimpan tidak langsung dihapus. Hasil tersimpan akan diganti hanya setelah pemeriksaan baru selesai dan disimpan.</p>
+
+                <div class="reset-confirm-actions">
+                    <button
+                        type="button"
+                        class="btn-secondary"
+                        id="cancelResetButton"
+                    >Batal</button>
+
+                    <button
+                        type="button"
+                        class="btn-primary"
+                        id="confirmResetButton"
+                        style="background-color: #ff1010; border-color: #ff1010;"
+                    >Ya, Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- POPUP KONFIRMASI SIMPAN DATA ANAK -->
+    <div class="task-detail-modal" id="saveConfirmModal" hidden>
+        <div class="task-detail-backdrop" data-cancel-save></div>
+
+        <div class="task-detail-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="saveConfirmTitle">
+
+            <div class="task-detail-header">
+                <h3 id="saveConfirmTitle">Konfirmasi Data Anak</h3>
+                <button type="button"
+                        class="task-detail-close"
+                        data-cancel-save
+                        aria-label="Tutup">&times;</button>
+            </div>
+
+            <div class="task-detail-body">
+                <p>Pastikan seluruh data anak sudah benar. Simpan data dan mulai pemeriksaan?</p>
+
+                <div class="reset-confirm-actions">
+                    <button type="button"
+                            class="btn-secondary"
+                            id="cancelSaveButton">
+                        Kembali Edit
+                    </button>
+
+                    <button type="button"
+                            class="btn-primary"
+                            id="confirmSaveButton">
+                        Ya, Simpan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- POPUP KONFIRMASI EDIT DATA ANAK -->
+    <div class="task-detail-modal" id="editConfirmModal" hidden>
+        <div class="task-detail-backdrop" data-cancel-edit></div>
+
+        <div class="task-detail-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="editConfirmTitle">
+
+            <div class="task-detail-header">
+                <h3 id="editConfirmTitle">Edit Data Anak</h3>
+                <button type="button"
+                        class="task-detail-close"
+                        data-cancel-edit
+                        aria-label="Tutup">&times;</button>
+            </div>
+
+            <div class="task-detail-body">
+                <p>Perubahan tanggal lahir, tanggal skrining, atau data prematur dapat mengubah usia dan tugas pemeriksaan. Jika usia berubah, pemeriksaan lama akan direset setelah data disimpan ulang. Lanjutkan edit?</p>
+
+                <div class="reset-confirm-actions">
+                    <button type="button"
+                            class="btn-secondary"
+                            id="cancelEditButton">
+                        Batal
+                    </button>
+
+                    <button type="button"
+                            class="btn-primary"
+                            id="confirmEditButton">
+                        Ya, Edit
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- =========================
+         PEMERIKSAAN
+    ========================== -->
+
+    <section class="screening-area">
+
+        <div class="age-banner">
+
+            <div>
+                <strong>Usia berdasarkan perhitungan:</strong>
+
+                <span id="ageBanner">
+                    Data Anak Belum Disimpan
+                </span>
+
+                <p>
+                    Garis umur pada diagram Denver II akan
+                    ditempatkan sesuai hasil perhitungan usia.
+                </p>
+            </div>
+
+            <a
+                href="{{ url_for('diagram') }}"
+                class="btn-primary"
+            >
+                Lihat Diagram
+            </a>
+
+        </div>
+
+
+        <!-- PERSONAL SOSIAL -->
+
+        <div class="domain-card" data-domain="personal_social">
+            <div class="domain-header">
+                <div>
+                    <span class="domain-icon" style="position: relative; top: -5px;">👥</span>
+                    <strong>Personal Sosial</strong>
+                </div>
+                <button type="button" class="collapse-button" aria-expanded="true">
+                    <span class="domain-status">Belum Dinilai</span> <span class="collapse-chevron">⌄</span>
+                </button>
+            </div>
+            <div class="domain-content">
+                <p class="empty-domain">
+                    Tugas pemeriksaan akan ditampilkan berdasarkan usia anak. Simpan data anak untuk menginputkan pemeriksaan.
+                </p>
+            </div>
+        </div>
+
+        <!-- ADAPTIF MOTORIK HALUS -->
+
+        <div class="domain-card" data-domain="fine_motor_adaptive">
+            <div class="domain-header">
+                <div>
+                    <span class="domain-icon">🧩</span>
+                    <strong>Adaptif-Motorik Halus</strong>
+                </div>
+                <button type="button" class="collapse-button" aria-expanded="true">
+                    <span class="domain-status">Belum Dinilai</span> <span class="collapse-chevron">⌄</span>
+                </button>
+            </div>
+            <div class="domain-content">
+                <p class="empty-domain">
+                    Tugas pemeriksaan akan ditampilkan berdasarkan usia anak. Simpan data anak untuk menginputkan pemeriksaan.
+                </p>
+            </div>
+        </div>
+
+        <!-- BAHASA -->
+
+        <div class="domain-card" data-domain="language">
+            <div class="domain-header">
+                <div>
+                    <span class="domain-icon">💬</span>
+                    <strong>Bahasa</strong>
+                </div>
+                <button type="button" class="collapse-button" aria-expanded="true">
+                    <span class="domain-status">Belum Dinilai</span> <span class="collapse-chevron">⌄</span>
+                </button>
+            </div>
+            <div class="domain-content">
+                <p class="empty-domain">
+                    Tugas pemeriksaan akan ditampilkan berdasarkan usia anak. Simpan data anak untuk menginputkan pemeriksaan.
+                </p>
+            </div>
+        </div>
+
+        <!-- MOTORIK KASAR -->
+
+        <div class="domain-card" data-domain="gross_motor">
+            <div class="domain-header">
+                <div>
+                    <span class="domain-icon">🏃</span>
+                    <strong>Motorik Kasar</strong>
+                </div>
+                <button type="button" class="collapse-button" aria-expanded="true">
+                    <span class="domain-status">Belum Dinilai</span> <span class="collapse-chevron">⌄</span>
+                </button>
+            </div>
+            <div class="domain-content">
+                <p class="empty-domain">
+                    Tugas pemeriksaan akan ditampilkan berdasarkan usia anak. Simpan data anak untuk menginputkan pemeriksaan.
+                </p>
+            </div>
+        </div>
+
+        <!-- DETAIL FOOTNOTE -->
+        <div class="task-detail-modal" id="taskDetailModal" hidden>
+            <div class="task-detail-backdrop" data-close-detail></div>
+            <div class="task-detail-dialog" role="dialog" aria-modal="true" aria-labelledby="taskDetailTitle">
+                <div class="task-detail-header">
+                    <h3 id="taskDetailTitle">Detail Tugas</h3>
+                    <button type="button" class="task-detail-close" data-close-detail aria-label="Tutup">&times;</button>
+                </div>
+                <div class="task-detail-body" id="taskDetailBody"></div>
+            </div>
+        </div>
+
+        <div class="bottom-actions">
+
+            <button
+                type="button"
+                class="btn-secondary"
+                id="resetButton"
+            >
+                ↶ Reset Pemeriksaan
+            </button>
+
+            <button
+                type="button"
+                class="btn-primary"
+                id="saveButton"
+            >
+                Simpan Pemeriksaan
+            </button>
+
+        </div>
+
+        <!-- POPUP KONFIRMASI RESET PEMERIKSAAN -->
+        <div class="task-detail-modal" id="resetExamConfirmModal" hidden>
+            <div class="task-detail-backdrop" data-cancel-reset-exam></div>
+
+            <div class="task-detail-dialog"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="resetExamConfirmTitle">
+
+                <div class="task-detail-header">
+                    <h3 id="resetExamConfirmTitle">Reset Pemeriksaan</h3>
+                    <button
+                        type="button"
+                        class="task-detail-close"
+                        data-cancel-reset-exam
+                        aria-label="Tutup"
+                    >&times;</button>
+                </div>
+
+                <div class="task-detail-body">
+                    <p>Apakah Anda yakin ingin menghapus progres P/F pada pemeriksaan ini dan mengulang dari awal? </p>
+
+                    <div class="reset-confirm-actions">
+                        <button
+                            type="button"
+                            class="btn-secondary"
+                            id="cancelResetExamButton"
+                        >Batal</button>
+
+                        <button
+                            type="button"
+                            class="btn-primary"
+                            id="confirmResetExamButton"
+                        >Ya, Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- POPUP KONFIRMASI SIMPAN PEMERIKSAAN -->
+        <div class="task-detail-modal" id="saveExamConfirmModal" hidden>
+            <div class="task-detail-backdrop" data-cancel-save-exam></div>
+            <div class="task-detail-dialog" role="dialog" aria-modal="true" aria-labelledby="saveExamConfirmTitle">
+                <div class="task-detail-header">
+                    <h3 id="saveExamConfirmTitle">Konfirmasi Simpan Pemeriksaan</h3>
+                    <button type="button" class="task-detail-close" data-cancel-save-exam aria-label="Tutup">&times;</button>
+                </div>
+                <div class="task-detail-body">
+                    <p id="saveExamConfirmMessage">Pastikan data anak benar dan pemeriksaan pada keempat domain sudah selesai. Hasil baru akan menggantikan satu hasil pemeriksaan aktif yang tersimpan.</p>
+                    <div class="reset-confirm-actions">
+                        <button type="button" class="btn-secondary" id="cancelSaveExamButton">Periksa Kembali</button>
+                        <button type="button" class="btn-primary" id="confirmSaveExamButton">Ya, Simpan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

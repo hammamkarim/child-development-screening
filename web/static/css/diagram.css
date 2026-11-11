@@ -1,0 +1,178 @@
+* { box-sizing: border-box; }
+:root {
+    --blue: #3f73e8;
+    --blue-dark: #315fc8;
+    --blue-soft: #f1f6ff;
+    --border: #dfe5ef;
+    --text: #202124;
+    --muted: #657080;
+    --green: #9bd4a4;
+    --orange: #ff8a43;
+}
+body {
+    margin: 0;
+    background: #f4f7fb;
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.diagram-header {
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    padding: 20px clamp(18px, 3vw, 44px); background: #fff; border-bottom: 1px solid var(--border);
+}
+.eyebrow { 
+    margin: 0 0 5px; 
+    color: var(--blue); 
+    font-size: 17px; 
+    font-weight: 750;
+}
+
+.diagram-header h1 { margin: 0; font-size: clamp(23px, 2.4vw, 32px); }
+.header-subtitle { margin: 7px 0 0; color: var(--muted); font-size: 14px; }
+.back-button {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 11px 16px; border-radius: 9px; background: var(--blue); color: #fff;
+    text-decoration: none; font-size: 14px; font-weight: 700; white-space: nowrap;
+}
+.back-button:hover { background: var(--blue-dark); }
+.diagram-main { width: min(1800px, 100%); margin: 0 auto; padding: 20px clamp(12px, 2vw, 28px) 34px; }
+.metadata-card, .chart-card, .task-info-card {
+    background: #fff; border: 1px solid var(--border); border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(31, 55, 90, .045); margin-bottom: 14px;
+}
+.metadata-card { padding: 18px 20px; }
+.metadata-title { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 15px; }
+.metadata-title h2, .chart-toolbar h2, .task-info-card h2 { margin: 0; font-size: 18px; }
+.metadata-state { padding: 6px 10px; border-radius: 999px; background: #eef1f5; color: #536071; font-size: 12px; font-weight: 700; }
+.metadata-state.is-saved { background: #e8f7ed; color: #217343; }
+.metadata-grid { display: grid; grid-template-columns: repeat(5, minmax(130px, 1fr)); gap: 12px; }
+.metadata-grid > div { min-width: 0; padding: 11px 12px; border: 1px solid #edf0f5; border-radius: 9px; background: #fbfcfe; }
+.metadata-grid span { display: block; margin-bottom: 6px; color: var(--muted); font-size: 12px; }
+.metadata-grid strong { display: block; overflow-wrap: anywhere; font-size: 14px; line-height: 1.35; }
+.notice { display: flex; flex-direction: column; gap: 5px; padding: 13px 16px; margin: 0 0 14px; border-radius: 10px; font-size: 14px; line-height: 1.45; }
+.notice-info { background: #eef5ff; border: 1px solid #c4d8ff; color: #344d78; }
+.notice[hidden] { display: none; }
+.chart-card { overflow: hidden; }
+.chart-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 17px 20px; border-bottom: 1px solid var(--border); }
+.chart-toolbar p { margin: 6px 0 0; color: var(--muted); font-size: 13px; }
+.zoom-controls { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.zoom-controls button { min-width: 38px; height: 36px; border: 1px solid #d5deef; border-radius: 8px; background: #fff; color: #34425b; font-size: 17px; cursor: pointer; }
+.zoom-controls button:hover { background: var(--blue-soft); border-color: #b8ccff; }
+#zoomReset { min-width: 62px; font-size: 12px; font-weight: 700; }
+.legend { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; padding: 13px 20px; background: #fbfcfe; border-bottom: 1px solid var(--border); }
+.legend-item { display: inline-flex; align-items: center; gap: 7px; color: #4f5b6b; font-size: 12px; }
+.legend-box { width: 21px; height: 13px; display: inline-block; border: 1px solid #5fae75; background: #fff; }
+.percentile-legend {
+    background: #ccebd2;
+}
+.initial-legend { border: 2px solid #3475ee; background: #eaf1ff; }
+.legend-line { height: 18px; border-left: 2px dashed #3475ee; }
+.legend-tick { height: 13px; border-left: 2px solid #222; }
+.legend-l { display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 4px; background: #fff0df; color: #b85c10; font-size: 11px; }
+.chart-status { padding: 10px 20px; color: var(--muted); font-size: 12px; }
+.chart-status:empty { display: none; }
+.chart-viewport { overflow: auto; max-height: 74vh; min-height: 300px; cursor: grab; overscroll-behavior: contain; background: #fff; }
+.chart-viewport.is-dragging { cursor: grabbing; user-select: none; }
+#denverChart { display: block; width: 2600px; max-width: none; height: auto; background: #fff; transform-origin: top left; }
+.chart-help { margin: 0; padding: 11px 20px 15px; color: var(--muted); font-size: 12px; line-height: 1.45; }
+.task-info-card { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; padding: 18px 20px; }
+.task-info-kicker { display: block; margin-bottom: 6px; color: var(--blue); font-size: 10px; font-weight: 800; letter-spacing: .12em; }
+.task-info-card h2 { margin-bottom: 6px; }
+.task-info-card p { margin: 0; color: var(--muted); font-size: 13px; }
+.task-info-details { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+.detail-chip { padding: 7px 9px; border: 1px solid #e4e9f1; border-radius: 7px; background: #fafbfd; color: #485568; font-size: 12px; white-space: nowrap; }
+
+.task-bar {
+    cursor: pointer;
+}
+
+.task-bar:focus {
+    outline: none;
+}
+
+/* Bagian utama tugas berubah biru saat hover */
+.task-bar:hover .task-outline,
+.task-bar:focus .task-outline {
+    fill: #dce8ff;
+    stroke: #245dcc;
+    stroke-width: 2.5;
+}
+
+/* Rentang P75–P90 ikut berubah warna */
+.task-bar:hover .task-percentile-range,
+.task-bar:focus .task-percentile-range {
+    fill: #a9c5ff;
+    stroke: #245dcc;
+    stroke-width: 2.5;
+}
+
+/* Pisahkan detail tugas ke baris baru */
+.task-info-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+}
+
+.task-info-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 8px;
+    width: 100%;
+}
+
+.detail-chip {
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+
+/* Informasi persentil berada di baris pertama */
+.task-info-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+/* Detail tugas berada di baris kedua dan selebar area */
+.task-footnote {
+    flex: 0 0 100%;
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e4e9f1;
+    border-radius: 7px;
+    background: #f8fafc;
+    color: #485568;
+    font-size: 12px;
+    line-height: 1.6;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+
+@media (max-width: 1050px) {
+    .metadata-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .metadata-grid > div:last-child { grid-column: 1 / -1; }
+}
+@media (max-width: 650px) {
+    .diagram-header { align-items: flex-start; flex-direction: column; }
+    .back-button { width: 100%; }
+    .metadata-title, .chart-toolbar, .task-info-card { align-items: flex-start; flex-direction: column; }
+    .metadata-grid { grid-template-columns: 1fr 1fr; }
+    .metadata-grid > div:last-child { grid-column: auto; }
+    .chart-viewport { max-height: 68vh; }
+    .legend { gap: 9px 12px; }
+    .task-info-details { justify-content: flex-start; }
+    
+    .task-info-card {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.chart-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.print-pdf-button { min-height: 36px; padding: 0 14px; border: 1px solid #315fc8; border-radius: 8px; background: #3f73e8; color: #fff; font-size: 13px; font-weight: 700; cursor: pointer; white-space: nowrap; }
+.print-pdf-button:hover { background: #315fc8; }
+.print-pdf-button:disabled { opacity: .65; cursor: wait; }
+@media (max-width: 760px) { .chart-toolbar { align-items: flex-start; flex-direction: column; } .chart-actions { width: 100%; justify-content: space-between; } }

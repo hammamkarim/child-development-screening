@@ -1,0 +1,12 @@
+{
+    "model": "TransE",
+    "embedding_dim": 100,
+    "margin": 1.0,
+    "random_seed": 42,
+    "kge_train_triples": 358400,
+    "kge_test_triples": 89600,
+    "mrr": 0.017048560082912445,
+    "hits_at_3": 0.01615513392857143,
+    "hits_at_10": 0.046160714285714284,
+    "mean_rank": 11420.2568359375
+}

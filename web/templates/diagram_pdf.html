@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<style>
+  @page { size: A3 portrait; margin: 4mm 5mm; }
+  * { box-sizing: border-box; }
+  body { margin: 0; color: #202124; font-family: Arial, Helvetica, sans-serif; }
+  .page-header { border-bottom: 0.7pt solid #6f7782; padding-bottom: 1.2mm; margin-bottom: 1mm; }
+  h1 { margin: 0; font-size: 17pt; line-height: 1; color: #333840; }
+  .metadata { display: grid; grid-template-columns: 1fr 1fr; column-gap: 8mm; row-gap: 0.7mm; margin-top: 1.5mm; }
+  .field { display: grid; grid-template-columns: 24mm 1fr; gap: 1mm; font-size: 7.5pt; min-height: 3mm; }
+  .field .label { font-weight: 700; text-transform: uppercase; font-size: 6.5pt; }
+  .field .value { border-bottom: 0.4pt dotted #a5aab1; min-height: 3mm; }
+  .legend { display: flex; flex-wrap: wrap; gap: 4mm; margin: 1.5mm 0; font-size: 7pt; color: #4f5b6b; }
+  .legend-item { display: inline-flex; align-items: center; gap: 1.2mm; }
+  .legend-box { display: inline-block; width: 5mm; height: 2.8mm; border: 1pt solid; }
+  .initial { background: #eaf1ff; border-color: #3475ee; }
+  .additional { background: #fffaf6; border-color: #ff873e; }
+  .range { background: #ccebd2; border-color: #8cc797; }
+  .answer { display: inline-grid; place-items: center; width: 3.2mm; height: 3.2mm; border-radius: 1mm; font-weight: 700; }
+  .pass { background: #dcfce7; color: #166534; border: .5pt solid #86d49b; }
+  .fail { background: #fee2e2; color: #b91c1c; border: .5pt solid #fca5a5; }
+  .age-line { display: inline-block; height: 3mm; border-left: 1.2pt dashed #3475ee; }
+  .chart { width: 100%; line-height: 0; page-break-inside: avoid; }
+  .chart svg { display: block; width: 100%; height: auto; max-width: 100%; margin: 0 auto; }
+  @media print { html, body { width: 100%; } .page-header, .chart { break-inside: avoid; } }
+</style>
+</head>
+<body>
+  <header class="page-header">
+    <h1>Denver II</h1>
+    <div class="metadata">
+      <div class="field"><span class="label">Pemeriksa:</span><span class="value">{{ examiner_name }}</span></div>
+      <div class="field"><span class="label">Nama:</span><span class="value">{{ child_name }}</span></div>
+      <div class="field"><span class="label">Tanggal:</span><span class="value">{{ screening_date }}</span></div>
+      <div class="field"><span class="label">Tanggal lahir:</span><span class="value">{{ birth_date }}</span></div>
+    </div>
+  </header>
+  {% if show_result_legend %}
+  <div class="legend">
+    <span class="legend-item"><i class="age-line"></i> Garis umur</span>
+    <span class="legend-item"><b class="answer pass">P</b> Berhasil</span>
+    <span class="legend-item"><b class="answer fail">F</b> Gagal</span>
+    <span class="legend-item"><i class="legend-box initial"></i> Tugas awal</span>
+    <span class="legend-item"><i class="legend-box additional"></i> Tugas tambahan diperiksa</span>
+    <span class="legend-item"><i class="legend-box range"></i> Rentang P75–P90</span>
+    <span class="legend-item">L = item laporan; garis kecil = P50</span>
+  </div>
+  {% endif %}
+  <main class="chart">{{ svg|safe }}</main>
+</body>
+</html>

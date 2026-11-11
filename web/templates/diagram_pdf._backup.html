@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<style>
+  @page { size: A3 portrait; margin: 4mm 5mm; }
+  * { box-sizing: border-box; }
+  body { margin: 0; color: #202124; font-family: Arial, Helvetica, sans-serif; }
+  .page-header { border-bottom: 0.7pt solid #6f7782; padding-bottom: 1.2mm; margin-bottom: 1mm; }
+  h1 { margin: 0; font-size: 17pt; line-height: 1; color: #333840; }
+  .metadata { display: grid; grid-template-columns: 1fr 1fr; column-gap: 8mm; row-gap: 0.7mm; margin-top: 1.5mm; }
+  .field { display: grid; grid-template-columns: 24mm 1fr; gap: 1mm; font-size: 7.5pt; min-height: 3mm; }
+  .field .label { font-weight: 700; text-transform: uppercase; font-size: 6.5pt; }
+  .field .value { border-bottom: 0.4pt dotted #a5aab1; min-height: 3mm; }
+  .chart { width: 100%; line-height: 0; page-break-inside: avoid; }
+  .chart svg { display: block; width: 100%; height: auto; max-width: 100%; margin: 0 auto; }
+  @media print { html, body { width: 100%; } .page-header, .chart { break-inside: avoid; } }
+</style>
+</head>
+<body>
+  <header class="page-header">
+    <h1>Denver II</h1>
+    <div class="metadata">
+      <div class="field"><span class="label">Pemeriksa:</span><span class="value">{{ examiner_name }}</span></div>
+      <div class="field"><span class="label">Nama:</span><span class="value">{{ child_name }}</span></div>
+      <div class="field"><span class="label">Tanggal:</span><span class="value">{{ screening_date }}</span></div>
+      <div class="field"><span class="label">Tanggal lahir:</span><span class="value">{{ birth_date }}</span></div>
+    </div>
+  </header>
+  <main class="chart">{{ svg|safe }}</main>
+</body>
+</html>

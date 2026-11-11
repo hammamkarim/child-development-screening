@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Diagram Pemeriksaan Denver II</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/detail.css') }}">
+</head>
+<body>
+    <header class="diagram-header">
+        <div>
+            <p class="eyebrow">Skrining Perkembangan Anak (Denver II)</p>
+            <h1>Detail Diagram Pemeriksaan Denver II</h1>
+            <p class="header-subtitle">Diagram lengkap dengan tugas yang diperiksa dan hasil P/F</p>
+        </div>
+        <a class="back-button" href="/result" id="backToResult">← Kembali ke Hasil</a>
+    </header>
+
+    <main class="diagram-main">
+        <section class="metadata-card" aria-label="Informasi pemeriksaan">
+            <div class="metadata-title">
+                <h2>Informasi Pemeriksaan</h2>
+                <span id="metadataState" class="metadata-state">Memuat data pemeriksaan…</span>
+            </div>
+            <div class="metadata-grid">
+                <div><span>Nama Pemeriksa</span><strong id="examinerName">—</strong></div>
+                <div><span>Tanggal Pemeriksaan</span><strong id="screeningDate">—</strong></div>
+                <div><span>Nama Anak</span><strong id="childName">—</strong></div>
+                <div><span>Tanggal Lahir</span><strong id="birthDate">—</strong></div>
+                <div><span>Usia Denver II</span><strong id="childAge">Belum tersedia</strong></div>
+            </div>
+        </section>
+
+        <div id="noChildNotice" class="notice notice-info">
+            <strong>DATA ANAK BELUM DIINPUTKAN!</strong>
+            <span>Selesaikan dan simpan pemeriksaan dari halaman utama untuk menampilkan garis umur, hasil P/F, dan penanda tugas awal maupun tambahan.</span>
+        </div>
+
+        <section class="chart-card">
+            <div class="chart-toolbar">
+                <div>
+                    <h2>Diagram Perkembangan</h2>
+                    <p>Geser diagram secara horizontal atau gunakan kontrol zoom untuk memperbesar.</p>
+                </div>
+                <div class="chart-actions">
+                    <button type="button" id="printPdfButton" class="print-pdf-button">Cetak PDF</button>
+                    <div class="zoom-controls" aria-label="Kontrol diagram">
+                    <button type="button" id="zoomOut" title="Perkecil diagram" aria-label="Perkecil">−</button>
+                    <button type="button" id="zoomReset" title="Ukuran normal">100%</button>
+                    <button type="button" id="zoomIn" title="Perbesar diagram" aria-label="Perbesar">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="legend" aria-label="Legenda diagram">
+                <span class="legend-item"><i class="legend-line"></i> Garis umur anak</span>
+                <span class="legend-item"><i class="legend-box initial-legend"></i> Tugas awal</span>
+                <span class="legend-item"><i class="legend-box additional-legend"></i> Tugas tambahan yang diperiksa</span>
+                <span class="legend-item"><b class="answer-legend answer-pass">P</b> Berhasil</span>
+                <span class="legend-item"><b class="answer-legend answer-fail">F</b> Gagal</span>
+                <span class="legend-item"><b class="legend-l">L</b> Item laporan</span>
+                <span class="legend-item"><i class="legend-tick"></i> Garis penanda P50</span>
+                <span class="legend-item"><i class="legend-box percentile-legend"></i> Rentang P75–P90</span>
+            </div>
+
+            <div id="chartStatus" class="chart-status" role="status">Memuat diagram Denver II…</div>
+            <div id="chartViewport" class="chart-viewport" tabindex="0" aria-label="Diagram Denver II lengkap; tugas yang diperiksa memiliki tanda P/F, dapat digeser secara horizontal">
+                <svg id="denverChart" role="img" aria-label="Diagram digital Denver II" xmlns="http://www.w3.org/2000/svg"></svg>
+            </div>
+            <p class="chart-help">Tugas awal ditandai biru dan tugas tambahan yang diperiksa ditandai jingga. Setiap tugas yang diperiksa memiliki label P/F di sebelah kiri. Arahkan kursor atau klik tugas untuk melihat detail persentil.</p>
+        </section>
+
+        <section class="task-info-card" id="taskInfoCard" aria-live="polite">
+            <div>
+                <span class="task-info-kicker">DETAIL TUGAS</span>
+                <h2 id="selectedTaskName">Pilih salah satu tugas pada diagram</h2>
+                <p id="selectedTaskDomain">Hasil pemeriksaan dan informasi persentil akan ditampilkan di sini.</p>
+            </div>
+            <div class="task-info-details" id="selectedTaskDetails"></div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/detail.js') }}"></script>
+</body>
+</html>

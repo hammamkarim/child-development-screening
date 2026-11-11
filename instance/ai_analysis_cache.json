@@ -1,0 +1,19 @@
+{
+  "fingerprint": "a58201ce670ace746fb0fca79d748fd1dcca4f9ce294e94d620445a6bd8ebf54",
+  "result": {
+    "success": true,
+    "status": "suspect",
+    "status_label": "SUSPECT",
+    "description": "Anak terdeteksi memiliki risiko keterlambatan perkembangan.",
+    "recommendation": "Disarankan untuk melakukan pemeriksaan diagnosis perkembangan lanjutan guna memastikan faktor risiko, serta tetap melakukan stimulasi perkembangan secara berkelanjutan.",
+    "probabilities": {
+      "normal": 0.04765262252547042,
+      "suspect": 0.9523473774745296
+    },
+    "age_mapping": {
+      "age_months": 24.0,
+      "age_category": 2,
+      "age_category_label": "2 tahun"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+    "model": "CatBoost Baseline",
+    "learning_rate": 0.1,
+    "depth": 6,
+    "iterations": 200,
+    "random_seed": 42,
+    "cv_folds": 5,
+    "cv_accuracy_mean": 0.9729531250000001,
+    "cv_accuracy_std": 0.0005590169943749262,
+    "cv_precision_mean": 0.975006943878518,
+    "cv_precision_std": 0.0006436362905338569,
+    "cv_recall_mean": 0.9915986012320814,
+    "cv_recall_std": 0.0009745619392079624,
+    "cv_f1_mean": 0.9832323343922793,
+    "cv_f1_std": 0.0003520115344815868,
+    "test_accuracy": 0.97375,
+    "test_precision": 0.9755610205963726,
+    "test_recall": 0.9920287589871835,
+    "test_f1": 0.9837259764414135
+}

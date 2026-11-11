@@ -1,0 +1,9 @@
+{
+    "train_records": 64000,
+    "features_per_record": 7,
+    "total_triples": 448000,
+    "unique_entities": 64111,
+    "unique_relations": 7,
+    "target_included": false,
+    "target_column": "dev_status"
+}
